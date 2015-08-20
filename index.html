@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+    <head>
+        <title>AngularJS Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="lib/angular.min.js"></script>
+    </head>
+    <body>
+<!--        <div ng-controller="MyController">
+            <h1>{{name}}</h1>
+            <p>{{address + ", " + title}}</p>
+        </div>-->
+        <div ng-controller="SecondController">
+            <h1>{{name}}</h1>
+            <p>{{address + ", " + title}}</p>
+        </div>
+        <script>
+            //Controller from AngularJS officially website
+            var a = angular.module('MyApp',[]);
+            a.controller('MyController',['$scope',function($author){
+                    $author.name = 'Hellen',
+                    $author.title = 'Student',
+                    $author.address = 'Kuta'
+            }]);
+        
+            //Controller from w3schools.com | http://www.w3schools.com/angular/angular_intro.asp
+            var b = angular.module('MyApp',[]);
+            b.controller('SecondController',function($scope){
+                $scope.name = 'Arin',
+                $scope.title = 'Student',
+                $scope.address = 'Lombok'
+            });
+        </script>
+    </body>
+</html>
